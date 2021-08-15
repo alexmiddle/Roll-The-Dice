@@ -1,3 +1,7 @@
+document.querySelector(".button").addEventListener("click", function() {
+
+buttonAnimation();
+
 var randomNumber1 = Math.floor(6*Math.random())+1;
 var randomNumber2 = Math.floor(6*Math.random())+1;
 
@@ -14,4 +18,15 @@ else if (randomNumber1<randomNumber2) {
 
 else {
   document.querySelector("h1").textContent = "Draw!";
+}
+
+});
+
+function buttonAnimation() {
+
+    var activeButton = document.querySelector(".button");
+    activeButton.classList.add("pressed");
+    setTimeout(function() {
+      activeButton.classList.remove("pressed")
+    }, 100);
 }
